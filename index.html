@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Results 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .result-table th, .result-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .result-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color:blue">West Bengal Council of Higher Secondary Education
+        Improvement Exam Results- 2024
+    </h2>
+     <p style="color:blue">Hosted by <b>National Informatics Centre</b></p>
+    <p style="color:blue">Data provided by <b>West Bengal Council Of Higher Secondary Education </b></p>    
+   <hr>
+   <h3 style="color:maroon">Higher Secondary Improvement Examination - 2024</h3>
+    <form id="resultForm"></form>    
+    <label for="rollNumber">Enter Your Roll No.:</label>
+        <input type="text" id="rollNumber" name="rollNumber" required><br><br>
+        <label for="number">Enter Number:</label>
+        <input type="text" id="number" name="number" required><br><br>
+        <label for="text">Enter DOB(DD/MM/YYYY)</label>
+        <input type="text" id="DOB"> <br><br>
+        <button type="button" onclick="displayResult()">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+    <div>
+        <p align="center"><b>DISCLAIMER</b></p>
+        <p align="center">Neither <u>NIC</u> nor
+            Board/Council/Institution/University is
+            responsible for any inadvertent error that may have crept in the results being published on NET. The results published on net are for immediate information to the examinees. These cannot be treated as original mark sheets. <u>Respective</u>  Board/Council/Institution/University has provided the data and intimated for publication.</p>
+    </div>
+
+    <script>
+        function displayResult() {
+            const rollNumber = document.getElementById('rollNumber').value;
+            const number = document.getElementById('number').value;
+            const resultDiv = document.getElementById('result');
+
+            if (rollNumber === '400311' && number === '1370') {
+                window.location.href = 'student1.html';
+            } else if (rollNumber === '421111' && number === '1438') {
+                window.location.href = 'student2.html';
+            } else if (rollNumber <= 400000 && rollNumber >= 500000 && number <= 1000 && number >= 2000) {
+                resultDiv.innerHTML = "This user didn't appear for improvement exam";
+            } else {
+                resultDiv.innerHTML = "Invalid Credentials";
+            }
+        }
+    </script>
+</body>
+</html>
